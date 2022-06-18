@@ -17,7 +17,7 @@ pipeline {
       steps {
         container('docker') {  
           sh "docker build -t javabuild:dev ."  // when we run docker in this step, we're running it via a shell on the docker build-pod container, 
-          sh "docker tag javabuild:dev registry.innowi.com/javabuild:dev ." 
+          sh "docker tag javabuild:dev registry.innowi.com/javabuild:dev" 
           sh "docker push registry.innowi.com/javabuild:dev"        // which is just connecting to the host docker deaemon
         }
       }
