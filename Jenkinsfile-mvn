@@ -22,7 +22,7 @@ pipeline {
             sh '''
             /kaniko/executor --dockerfile `pwd`/Dockerfile-mvn \
                              --context `pwd` \
-                             --destination=registry.domain.com/myapis:${BUILD_NUMBER}
+                             --destination=registry.innowi.com/myapis:${BUILD_NUMBER}
             '''
           }
         }
