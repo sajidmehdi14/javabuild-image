@@ -27,7 +27,7 @@ spec:
         imagePullPolicy: Always
         name: myweb
       imagePullSecrets:
-        - name: regcred          
+      - name: regcred          
 
 ---
 apiVersion: v1      imagePullSecrets:
