@@ -9,23 +9,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: myapis
-  name: myapis
+    app: myweb
+  name: myweb
   namespace: pipeline-demo
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: myapis
+      app: myweb
   template:
     metadata:
       labels:
-        app: myapis
+        app: myweb
     spec:
       containers:
-      - image: registry.innowi.com/myapis:<TAG>
+      - image: registry.innowi.com/myweb:<TAG>
         imagePullPolicy: Always
-        name: myapis
+        name: myweb
       imagePullSecrets:
       - name: regcred          
 
@@ -34,15 +34,15 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: myapis
-  name: myapis
+    app: myweb
+  name: myweb
   namespace: pipeline-demo
 spec:
   ports:
-  - nodePort: 32280
+  - nodePort: 322443
     port: 80
     protocol: TCP
-    targetPort: 8080
+    targetPort: 80
   selector:
-    app: myapis
+    app: myweb
   type: NodePort
