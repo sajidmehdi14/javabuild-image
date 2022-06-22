@@ -1,12 +1,13 @@
-pipeline{
+pipeline {
     agent agentnode1
 
-    stages{
+    stages {
 
         stage("Build"){
 
-            sh 'pwd'
-
+            steps {
+                sh 'pwd'
+            }
         }
     }
 }
