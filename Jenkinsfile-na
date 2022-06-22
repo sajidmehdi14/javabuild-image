@@ -1,0 +1,12 @@
+pipeline{
+    agent agentnode1
+
+    stages{
+
+        stage("Build"){
+
+            sh 'pwd'
+
+        }
+    }
+}
